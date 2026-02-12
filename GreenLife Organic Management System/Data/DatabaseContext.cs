@@ -1,4 +1,5 @@
-﻿﻿﻿using System.Data.SqlClient;
+﻿﻿﻿﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace GreenLife_Organic_Management_System.Data;
 
@@ -8,43 +9,48 @@ public class DatabaseContext
 
     private static string GetConnectionString()
     {
-        // Get the application's base directory
-        string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        string dbPath = Path.Combine(appDirectory, "GreenLifeDB.mdf");
+        const string dbName = "GreenLifeDB";
+        const string serverName = @"localhost\SQLEXPRESS";
         
-        // Try multiple connection strings in order of preference
-        var connectionStrings = new[]
-        {
-            // SQL Server Express (most common installation)
-            $@"Data Source=.\SQLEXPRESS;AttachDbFilename={dbPath};Integrated Security=True;Connect Timeout=30;User Instance=False",
-            // SQL Server Express alternate format
-            $@"Data Source=localhost\SQLEXPRESS;AttachDbFilename={dbPath};Integrated Security=True;Connect Timeout=30;User Instance=False",
-            // LocalDB (lightweight option)
-            $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbPath};Integrated Security=True;Connect Timeout=30",
-            // Default SQL Server instance
-            $@"Data Source=.;AttachDbFilename={dbPath};Integrated Security=True;Connect Timeout=30;User Instance=False"
-        };
+        // Ensure the database exists
+        EnsureDatabaseExists(serverName, dbName);
         
-        // Try each connection string to find a working one
-        foreach (var connStr in connectionStrings)
+        // Build and return connection string for the database
+        return $"Data Source={serverName};Initial Catalog={dbName};Integrated Security=True;Connect Timeout=30;TrustServerCertificate=True";
+    }
+    
+    private static void EnsureDatabaseExists(string serverName, string dbName)
+    {
+        try
         {
-            try
+            // Connect to master database
+            string masterConnStr = $"Data Source={serverName};Initial Catalog=master;Integrated Security=True;Connect Timeout=10;TrustServerCertificate=True";
+            
+            using (var conn = new SqlConnection(masterConnStr))
             {
-                using (var conn = new SqlConnection(connStr))
+                conn.Open();
+                
+                // Check if database exists
+                using (var cmd = new SqlCommand("SELECT database_id FROM sys.databases WHERE name = @dbName", conn))
                 {
-                    conn.Open();
-                    conn.Close();
-                    return connStr; // Return the first working connection string
+                    cmd.Parameters.AddWithValue("@dbName", dbName);
+                    var result = cmd.ExecuteScalar();
+                    
+                    if (result == null)
+                    {
+                        // Database doesn't exist, create it
+                        using (var createCmd = new SqlCommand($"CREATE DATABASE [{dbName}]", conn))
+                        {
+                            createCmd.ExecuteNonQuery();
+                        }
+                    }
                 }
             }
-            catch
-            {
-                // Continue to next connection string
-            }
         }
-        
-        // If none work, return the first one (will fail with helpful error message)
-        return connectionStrings[0];
+        catch
+        {
+            // If we can't create the database, the connection attempt will fail with a proper error
+        }
     }
     
     public static SqlConnection GetConnection()
@@ -171,7 +177,7 @@ public class DatabaseContext
                     new SqlParameter("@FullName", "System Administrator"),
                     new SqlParameter("@PhoneNumber", "0000000000"),
                     new SqlParameter("@Address", "GreenLife HQ"),
-                    new SqlParameter("@Role", 0)); // Admin role
+                    new SqlParameter("@Role", SqlDbType.Int) { Value = 0 }); // Admin role
             }
             
             // Insert sample products if none exist
