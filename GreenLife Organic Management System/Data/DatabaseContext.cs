@@ -204,21 +204,26 @@ public class DatabaseContext
     {
         var products = new[]
         {
-            ("Organic Apples", "Fruits", "Fresh organic apples from local farms", 3.99m, 100, "Green Valley Farms"),
-            ("Organic Bananas", "Fruits", "Ripe organic bananas", 2.49m, 150, "Tropical Organic"),
-            ("Organic Carrots", "Vegetables", "Crunchy organic carrots", 1.99m, 80, "Root Veggie Co"),
-            ("Organic Spinach", "Vegetables", "Fresh organic spinach leaves", 2.99m, 60, "Leafy Greens Ltd"),
-            ("Organic Milk", "Dairy", "Full cream organic milk", 4.99m, 40, "Pure Dairy Farms"),
-            ("Organic Eggs", "Dairy", "Free-range organic eggs (12 pack)", 5.99m, 75, "Happy Hens"),
-            ("Organic Brown Rice", "Grains", "Premium organic brown rice", 6.99m, 50, "Grain Masters"),
-            ("Organic Quinoa", "Grains", "High-protein organic quinoa", 8.99m, 45, "Ancient Grains Co"),
-            ("Organic Tomatoes", "Vegetables", "Juicy organic tomatoes", 3.49m, 90, "Sun Harvest"),
-            ("Organic Honey", "Sweeteners", "Raw organic honey", 9.99m, 30, "Bee Natural"),
-            ("Organic Olive Oil", "Oils", "Extra virgin organic olive oil", 12.99m, 35, "Mediterranean Oils"),
-            ("Organic Green Tea", "Beverages", "Premium organic green tea", 7.49m, 55, "Tea Gardens"),
-            ("Organic Almonds", "Nuts", "Raw organic almonds", 11.99m, 40, "Nutty Delights"),
-            ("Organic Strawberries", "Fruits", "Sweet organic strawberries", 5.99m, 65, "Berry Best"),
-            ("Organic Broccoli", "Vegetables", "Fresh organic broccoli", 2.79m, 70, "Green Valley Farms")
+            ("Organic Bananas (Ambul)", "Fruits", "Fresh organic bananas from local farms", 250.00m, 150, "Lanka Organic Farms"),
+            ("Organic Papaya (Papol)", "Fruits", "Sweet organic papaya", 180.00m, 100, "Tropical Sri Lanka"),
+            ("Organic Mango (Amba)", "Fruits", "Juicy organic mangoes", 350.00m, 80, "Fruit Lanka"),
+            ("Organic Pineapple (Annasi)", "Fruits", "Fresh organic pineapple", 220.00m, 90, "Golden Harvest"),
+            ("Organic Coconut (Pol)", "Fruits", "Fresh organic coconuts", 120.00m, 200, "Coconut Growers Association"),
+            ("Organic Gotukola", "Vegetables", "Fresh organic gotukola leaves", 150.00m, 60, "Green Leaf Organic"),
+            ("Organic Murunga (Drumstick)", "Vegetables", "Organic drumstick vegetables", 280.00m, 70, "Village Organics"),
+            ("Organic Brinjal (Wambatu)", "Vegetables", "Fresh organic eggplant", 160.00m, 85, "Upcountry Organic"),
+            ("Organic Bitter Gourd (Karawila)", "Vegetables", "Organic bitter gourd", 190.00m, 75, "Healthy Greens"),
+            ("Organic Tomatoes (Thakkali)", "Vegetables", "Fresh organic tomatoes", 220.00m, 95, "Nuwara Eliya Organic"),
+            ("Organic Red Rice (Kekulu)", "Grains", "Traditional organic red rice (1kg)", 350.00m, 120, "Paddy Farmers Coop"),
+            ("Organic White Rice (Samba)", "Grains", "Premium organic white rice (1kg)", 280.00m, 150, "Rice Mill Organic"),
+            ("Organic Coconut Oil (Pol Thel)", "Oils", "Pure organic coconut oil (500ml)", 650.00m, 50, "Ceylon Coconut Oil"),
+            ("Organic Ceylon Tea (Ceylon Thé)", "Beverages", "Premium organic Ceylon tea (250g)", 850.00m, 80, "Ceylon Tea Gardens"),
+            ("Organic Jaggery (Hakuru)", "Sweeteners", "Natural organic jaggery (500g)", 320.00m, 60, "Traditional Sweeteners"),
+            ("Organic Kithul Treacle (Kithul Pani)", "Sweeteners", "Pure organic kithul treacle (250ml)", 750.00m, 40, "Kithul Tappers Association"),
+            ("Organic Curd (Meekiri)", "Dairy", "Fresh organic buffalo curd", 180.00m, 70, "Village Dairy"),
+            ("Organic Cashew Nuts", "Nuts", "Premium organic cashew nuts (250g)", 1200.00m, 45, "Cashew Processors Lanka"),
+            ("Organic King Coconut Water (Thambili)", "Beverages", "Fresh organic king coconut", 150.00m, 100, "King Coconut Suppliers"),
+            ("Organic Curry Leaves (Karapincha)", "Spices", "Fresh organic curry leaves (100g)", 80.00m, 90, "Spice Garden Organic")
         };
         
         foreach (var (name, category, description, price, stock, supplier) in products)
