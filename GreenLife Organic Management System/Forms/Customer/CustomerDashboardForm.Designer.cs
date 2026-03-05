@@ -44,14 +44,12 @@ partial class CustomerDashboardForm
         ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
         this.SuspendLayout();
         
-        // lblWelcome
         this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
         this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.lblWelcome.Location = new System.Drawing.Point(20, 15);
         this.lblWelcome.Size = new System.Drawing.Size(600, 35);
         this.lblWelcome.Text = "Welcome, Customer!";
         
-        // Search controls
         this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.txtSearch.Location = new System.Drawing.Point(20, 60);
         this.txtSearch.PlaceholderText = "Search products...";
@@ -81,7 +79,6 @@ partial class CustomerDashboardForm
         this.btnSearch.Text = "Search";
         this.btnSearch.Click += new EventHandler(this.btnSearch_Click);
         
-        // dgvProducts
         this.dgvProducts.AllowUserToAddRows = false;
         this.dgvProducts.AllowUserToDeleteRows = false;
         this.dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -91,7 +88,6 @@ partial class CustomerDashboardForm
         this.dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         this.dgvProducts.Size = new System.Drawing.Size(960, 400);
         
-        // Cart controls
         this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 11F);
         this.txtQuantity.Location = new System.Drawing.Point(20, 520);
         this.txtQuantity.Size = new System.Drawing.Size(80, 27);
@@ -107,7 +103,6 @@ partial class CustomerDashboardForm
         this.btnAddToCart.Text = "Add to Cart";
         this.btnAddToCart.Click += new EventHandler(this.btnAddToCart_Click);
         
-        // Navigation buttons
         this.btnViewCart.BackColor = System.Drawing.Color.FromArgb(255, 193, 7);
         this.btnViewCart.FlatStyle = FlatStyle.Flat;
         this.btnViewCart.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -143,7 +138,6 @@ partial class CustomerDashboardForm
         this.btnLogout.Text = "Logout";
         this.btnLogout.Click += new EventHandler(this.btnLogout_Click);
         
-        // CustomerDashboardForm
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = System.Drawing.Color.FromArgb(240, 255, 240);

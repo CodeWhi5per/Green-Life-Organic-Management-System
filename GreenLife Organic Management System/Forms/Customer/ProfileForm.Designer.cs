@@ -43,7 +43,6 @@ partial class ProfileForm
         this.btnCancel = new Button();
         this.SuspendLayout();
         
-        // lblTitle
         this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
         this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.lblTitle.Location = new System.Drawing.Point(20, 20);
@@ -53,13 +52,11 @@ partial class ProfileForm
         int yPos = 70;
         int spacing = 65;
         
-        // lblUsername
         this.lblUsername.AutoSize = true;
         this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.lblUsername.Location = new System.Drawing.Point(30, yPos);
         this.lblUsername.Text = "Username:";
         
-        // txtUsername
         this.txtUsername.Enabled = false;
         this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.txtUsername.Location = new System.Drawing.Point(30, yPos + 25);
@@ -106,7 +103,6 @@ partial class ProfileForm
         this.txtAddress.Multiline = true;
         this.txtAddress.Size = new System.Drawing.Size(380, 70);
         
-        // btnSave
         this.btnSave.BackColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.btnSave.FlatStyle = FlatStyle.Flat;
         this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -116,7 +112,6 @@ partial class ProfileForm
         this.btnSave.Text = "Save Changes";
         this.btnSave.Click += new EventHandler(this.btnSave_Click);
         
-        // btnCancel
         this.btnCancel.BackColor = System.Drawing.Color.Gray;
         this.btnCancel.FlatStyle = FlatStyle.Flat;
         this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11F);
@@ -126,7 +121,6 @@ partial class ProfileForm
         this.btnCancel.Text = "Cancel";
         this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
         
-        // ProfileForm
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = System.Drawing.Color.FromArgb(240, 255, 240);

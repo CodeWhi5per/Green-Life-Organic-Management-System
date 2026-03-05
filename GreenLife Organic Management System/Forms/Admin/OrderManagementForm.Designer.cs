@@ -36,14 +36,12 @@ partial class OrderManagementForm
         this.grpOrderDetails.SuspendLayout();
         this.SuspendLayout();
         
-        // cmbStatusFilter
         this.cmbStatusFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.cmbStatusFilter.Location = new System.Drawing.Point(20, 20);
         this.cmbStatusFilter.Size = new System.Drawing.Size(200, 25);
         this.cmbStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
         this.cmbStatusFilter.SelectedIndexChanged += new EventHandler(this.cmbStatusFilter_SelectedIndexChanged);
         
-        // dgvOrders
         this.dgvOrders.AllowUserToAddRows = false;
         this.dgvOrders.AllowUserToDeleteRows = false;
         this.dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -54,7 +52,6 @@ partial class OrderManagementForm
         this.dgvOrders.Size = new System.Drawing.Size(960, 250);
         this.dgvOrders.SelectionChanged += new EventHandler(this.dgvOrders_SelectionChanged);
         
-        // grpOrderDetails
         this.grpOrderDetails.Controls.Add(this.lblOrderInfo);
         this.grpOrderDetails.Controls.Add(this.dgvOrderItems);
         this.grpOrderDetails.Controls.Add(this.cmbNewStatus);
@@ -64,13 +61,11 @@ partial class OrderManagementForm
         this.grpOrderDetails.Size = new System.Drawing.Size(960, 280);
         this.grpOrderDetails.Text = "Order Details";
         
-        // lblOrderInfo
         this.lblOrderInfo.AutoSize = false;
         this.lblOrderInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
         this.lblOrderInfo.Location = new System.Drawing.Point(15, 30);
         this.lblOrderInfo.Size = new System.Drawing.Size(500, 80);
         
-        // dgvOrderItems
         this.dgvOrderItems.AllowUserToAddRows = false;
         this.dgvOrderItems.AllowUserToDeleteRows = false;
         this.dgvOrderItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -80,13 +75,11 @@ partial class OrderManagementForm
         this.dgvOrderItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         this.dgvOrderItems.Size = new System.Drawing.Size(930, 100);
         
-        // cmbNewStatus
         this.cmbNewStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.cmbNewStatus.Location = new System.Drawing.Point(15, 235);
         this.cmbNewStatus.Size = new System.Drawing.Size(200, 25);
         this.cmbNewStatus.DropDownStyle = ComboBoxStyle.DropDownList;
         
-        // btnUpdateStatus
         this.btnUpdateStatus.BackColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.btnUpdateStatus.FlatStyle = FlatStyle.Flat;
         this.btnUpdateStatus.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -96,7 +89,6 @@ partial class OrderManagementForm
         this.btnUpdateStatus.Text = "Update Status";
         this.btnUpdateStatus.Click += new EventHandler(this.btnUpdateStatus_Click);
         
-        // btnClose
         this.btnClose.BackColor = System.Drawing.Color.Gray;
         this.btnClose.FlatStyle = FlatStyle.Flat;
         this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -106,7 +98,6 @@ partial class OrderManagementForm
         this.btnClose.Text = "Close";
         this.btnClose.Click += new EventHandler(this.btnClose_Click);
         
-        // OrderManagementForm
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = System.Drawing.Color.FromArgb(240, 255, 240);

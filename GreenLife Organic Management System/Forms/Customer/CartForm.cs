@@ -32,7 +32,6 @@ public partial class CartForm : Form
             dgvCart.Columns["Subtotal"].DefaultCellStyle.Format = "C2";
         }
         
-        // Add product name column
         if (!dgvCart.Columns.Contains("ProductName"))
         {
             var nameColumn = new DataGridViewTextBoxColumn
@@ -123,7 +122,7 @@ public partial class CartForm : Form
         }
         else
         {
-            LoadCart(); // Refresh in case quantities changed
+            LoadCart(); 
         }
     }
     

@@ -14,7 +14,6 @@ public class Product
     public bool IsActive { get; set; }
     public decimal? DiscountPercentage { get; set; }
     
-    // Computed property
     public decimal DiscountedPrice => DiscountPercentage.HasValue 
         ? Price * (1 - DiscountPercentage.Value / 100) 
         : Price;

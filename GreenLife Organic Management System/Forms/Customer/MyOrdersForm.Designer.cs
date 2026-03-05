@@ -26,14 +26,12 @@ partial class MyOrdersForm
         ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
         this.SuspendLayout();
         
-        // lblTotalOrders
         this.lblTotalOrders.AutoSize = true;
         this.lblTotalOrders.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
         this.lblTotalOrders.ForeColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.lblTotalOrders.Location = new System.Drawing.Point(20, 20);
         this.lblTotalOrders.Text = "Total Orders: 0";
         
-        // dgvOrders
         this.dgvOrders.AllowUserToAddRows = false;
         this.dgvOrders.AllowUserToDeleteRows = false;
         this.dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -44,7 +42,6 @@ partial class MyOrdersForm
         this.dgvOrders.Size = new System.Drawing.Size(560, 400);
         this.dgvOrders.SelectionChanged += new EventHandler(this.dgvOrders_SelectionChanged);
         
-        // txtOrderDetails
         this.txtOrderDetails.BackColor = System.Drawing.Color.White;
         this.txtOrderDetails.Font = new System.Drawing.Font("Segoe UI", 9F);
         this.txtOrderDetails.Location = new System.Drawing.Point(600, 55);
@@ -53,7 +50,6 @@ partial class MyOrdersForm
         this.txtOrderDetails.ScrollBars = ScrollBars.Vertical;
         this.txtOrderDetails.Size = new System.Drawing.Size(350, 400);
         
-        // btnClose
         this.btnClose.BackColor = System.Drawing.Color.Gray;
         this.btnClose.FlatStyle = FlatStyle.Flat;
         this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -63,7 +59,6 @@ partial class MyOrdersForm
         this.btnClose.Text = "Close";
         this.btnClose.Click += new EventHandler(this.btnClose_Click);
         
-        // MyOrdersForm
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = System.Drawing.Color.FromArgb(240, 255, 240);

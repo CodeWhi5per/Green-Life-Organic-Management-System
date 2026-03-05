@@ -38,29 +38,24 @@ partial class ReportsForm
         ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
         this.SuspendLayout();
         
-        // lblStartDate
         this.lblStartDate.AutoSize = true;
         this.lblStartDate.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.lblStartDate.Location = new System.Drawing.Point(20, 20);
         this.lblStartDate.Text = "Start Date:";
         
-        // dtpStartDate
         this.dtpStartDate.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.dtpStartDate.Location = new System.Drawing.Point(20, 45);
         this.dtpStartDate.Size = new System.Drawing.Size(200, 25);
         
-        // lblEndDate
         this.lblEndDate.AutoSize = true;
         this.lblEndDate.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.lblEndDate.Location = new System.Drawing.Point(240, 20);
         this.lblEndDate.Text = "End Date:";
         
-        // dtpEndDate
         this.dtpEndDate.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.dtpEndDate.Location = new System.Drawing.Point(240, 45);
         this.dtpEndDate.Size = new System.Drawing.Size(200, 25);
         
-        // btnGenerateSalesReport
         this.btnGenerateSalesReport.BackColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.btnGenerateSalesReport.FlatStyle = FlatStyle.Flat;
         this.btnGenerateSalesReport.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -70,7 +65,6 @@ partial class ReportsForm
         this.btnGenerateSalesReport.Text = "Generate Sales Report";
         this.btnGenerateSalesReport.Click += new EventHandler(this.btnGenerateSalesReport_Click);
         
-        // btnGenerateStockReport
         this.btnGenerateStockReport.BackColor = System.Drawing.Color.FromArgb(70, 130, 180);
         this.btnGenerateStockReport.FlatStyle = FlatStyle.Flat;
         this.btnGenerateStockReport.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -80,7 +74,6 @@ partial class ReportsForm
         this.btnGenerateStockReport.Text = "Generate Stock Report";
         this.btnGenerateStockReport.Click += new EventHandler(this.btnGenerateStockReport_Click);
         
-        // dgvReport
         this.dgvReport.AllowUserToAddRows = false;
         this.dgvReport.AllowUserToDeleteRows = false;
         this.dgvReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -90,7 +83,6 @@ partial class ReportsForm
         this.dgvReport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         this.dgvReport.Size = new System.Drawing.Size(850, 350);
         
-        // txtReportSummary
         this.txtReportSummary.BackColor = System.Drawing.Color.White;
         this.txtReportSummary.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.txtReportSummary.Location = new System.Drawing.Point(890, 150);
@@ -98,7 +90,6 @@ partial class ReportsForm
         this.txtReportSummary.ReadOnly = true;
         this.txtReportSummary.Size = new System.Drawing.Size(250, 250);
         
-        // btnExportExcel
         this.btnExportExcel.BackColor = System.Drawing.Color.FromArgb(40, 167, 69);
         this.btnExportExcel.FlatStyle = FlatStyle.Flat;
         this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -108,7 +99,6 @@ partial class ReportsForm
         this.btnExportExcel.Text = "Export to Excel";
         this.btnExportExcel.Click += new EventHandler(this.btnExportExcel_Click);
         
-        // btnClose
         this.btnClose.BackColor = System.Drawing.Color.Gray;
         this.btnClose.FlatStyle = FlatStyle.Flat;
         this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -118,7 +108,6 @@ partial class ReportsForm
         this.btnClose.Text = "Close";
         this.btnClose.Click += new EventHandler(this.btnClose_Click);
         
-        // ReportsForm
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = System.Drawing.Color.FromArgb(240, 255, 240);

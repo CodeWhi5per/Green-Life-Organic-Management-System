@@ -34,7 +34,6 @@ partial class CartForm
         ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
         this.SuspendLayout();
         
-        // dgvCart
         this.dgvCart.AllowUserToAddRows = false;
         this.dgvCart.AllowUserToDeleteRows = false;
         this.dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -44,7 +43,6 @@ partial class CartForm
         this.dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         this.dgvCart.Size = new System.Drawing.Size(660, 350);
         
-        // lblTotal
         this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
         this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.lblTotal.Location = new System.Drawing.Point(450, 380);
@@ -52,14 +50,12 @@ partial class CartForm
         this.lblTotal.Text = "Total: $0.00";
         this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         
-        // txtNewQuantity
         this.txtNewQuantity.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.txtNewQuantity.Location = new System.Drawing.Point(20, 390);
         this.txtNewQuantity.Size = new System.Drawing.Size(70, 25);
         this.txtNewQuantity.Text = "1";
         this.txtNewQuantity.TextAlign = HorizontalAlignment.Center;
         
-        // btnUpdateQuantity
         this.btnUpdateQuantity.BackColor = System.Drawing.Color.FromArgb(255, 193, 7);
         this.btnUpdateQuantity.FlatStyle = FlatStyle.Flat;
         this.btnUpdateQuantity.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -68,7 +64,6 @@ partial class CartForm
         this.btnUpdateQuantity.Text = "Update Qty";
         this.btnUpdateQuantity.Click += new EventHandler(this.btnUpdateQuantity_Click);
         
-        // btnRemove
         this.btnRemove.BackColor = System.Drawing.Color.FromArgb(220, 53, 69);
         this.btnRemove.FlatStyle = FlatStyle.Flat;
         this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -78,7 +73,6 @@ partial class CartForm
         this.btnRemove.Text = "Remove Item";
         this.btnRemove.Click += new EventHandler(this.btnRemove_Click);
         
-        // btnClearCart
         this.btnClearCart.BackColor = System.Drawing.Color.Gray;
         this.btnClearCart.FlatStyle = FlatStyle.Flat;
         this.btnClearCart.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -88,7 +82,6 @@ partial class CartForm
         this.btnClearCart.Text = "Clear Cart";
         this.btnClearCart.Click += new EventHandler(this.btnClearCart_Click);
         
-        // btnCheckout
         this.btnCheckout.BackColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.btnCheckout.FlatStyle = FlatStyle.Flat;
         this.btnCheckout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -98,7 +91,6 @@ partial class CartForm
         this.btnCheckout.Text = "Proceed to Checkout";
         this.btnCheckout.Click += new EventHandler(this.btnCheckout_Click);
         
-        // btnClose
         this.btnClose.BackColor = System.Drawing.Color.Gray;
         this.btnClose.FlatStyle = FlatStyle.Flat;
         this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -108,7 +100,6 @@ partial class CartForm
         this.btnClose.Text = "Continue Shopping";
         this.btnClose.Click += new EventHandler(this.btnClose_Click);
         
-        // CartForm
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = System.Drawing.Color.FromArgb(240, 255, 240);

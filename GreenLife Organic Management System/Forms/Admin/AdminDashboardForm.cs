@@ -25,7 +25,6 @@ public partial class AdminDashboardForm : Form
     {
         try
         {
-            // Get statistics
             var products = _productRepository.GetAllProducts();
             var orders = _orderRepository.GetAllOrders();
             var lowStockProducts = _productRepository.GetLowStockProducts();
@@ -36,7 +35,6 @@ public partial class AdminDashboardForm : Form
             lblTotalOrders.Text = orders.Count.ToString();
             lblTotalSales.Text = $"${totalSales:N2}";
             
-            // Set low stock warning color
             if (lowStockProducts.Count > 0)
             {
                 lblLowStock.ForeColor = System.Drawing.Color.Red;
@@ -53,7 +51,7 @@ public partial class AdminDashboardForm : Form
     {
         var form = new ProductManagementForm();
         form.ShowDialog();
-        LoadDashboardData(); // Refresh dashboard after returning
+        LoadDashboardData(); 
     }
     
     private void btnCustomers_Click(object sender, EventArgs e)
@@ -66,7 +64,7 @@ public partial class AdminDashboardForm : Form
     {
         var form = new OrderManagementForm();
         form.ShowDialog();
-        LoadDashboardData(); // Refresh dashboard after returning
+        LoadDashboardData(); 
     }
     
     private void btnReports_Click(object sender, EventArgs e)

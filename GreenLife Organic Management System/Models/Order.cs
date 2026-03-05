@@ -14,7 +14,6 @@ public class Order
     public DateTime? ShippedDate { get; set; }
     public DateTime? DeliveredDate { get; set; }
     
-    // Navigation property
     public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     public string CustomerName { get; set; } = string.Empty; // For display purposes
 }

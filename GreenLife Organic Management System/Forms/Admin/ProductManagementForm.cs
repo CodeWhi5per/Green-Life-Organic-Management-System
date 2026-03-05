@@ -28,7 +28,6 @@ public partial class ProductManagementForm : Form
             var products = _productRepository.GetAllProducts(true);
             dgvProducts.DataSource = products;
             
-            // Format columns
             if (dgvProducts.Columns.Count > 0)
             {
                 dgvProducts.Columns["ProductId"].HeaderText = "ID";

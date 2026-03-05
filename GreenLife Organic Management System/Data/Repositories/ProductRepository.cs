@@ -188,7 +188,6 @@ public class ProductRepository
             using var connection = DatabaseContext.GetConnection();
             connection.Open();
             
-            // Soft delete
             var query = "UPDATE Products SET IsActive = 0 WHERE ProductId = @ProductId";
             using var command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ProductId", productId);

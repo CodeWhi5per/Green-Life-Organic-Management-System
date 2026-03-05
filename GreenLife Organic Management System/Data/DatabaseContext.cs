@@ -12,10 +12,8 @@ public class DatabaseContext
         const string dbName = "GreenLifeDB";
         const string serverName = @"localhost\SQLEXPRESS";
         
-        // Ensure the database exists
         EnsureDatabaseExists(serverName, dbName);
         
-        // Build and return connection string for the database
         return $"Data Source={serverName};Initial Catalog={dbName};Integrated Security=True;Connect Timeout=30;TrustServerCertificate=True";
     }
     
@@ -23,14 +21,12 @@ public class DatabaseContext
     {
         try
         {
-            // Connect to master database
             string masterConnStr = $"Data Source={serverName};Initial Catalog=master;Integrated Security=True;Connect Timeout=10;TrustServerCertificate=True";
             
             using (var conn = new SqlConnection(masterConnStr))
             {
                 conn.Open();
                 
-                // Check if database exists
                 using (var cmd = new SqlCommand("SELECT database_id FROM sys.databases WHERE name = @dbName", conn))
                 {
                     cmd.Parameters.AddWithValue("@dbName", dbName);
@@ -38,7 +34,6 @@ public class DatabaseContext
                     
                     if (result == null)
                     {
-                        // Database doesn't exist, create it
                         using (var createCmd = new SqlCommand($"CREATE DATABASE [{dbName}]", conn))
                         {
                             createCmd.ExecuteNonQuery();
@@ -49,7 +44,7 @@ public class DatabaseContext
         }
         catch
         {
-            // If we can't create the database, the connection attempt will fail with a proper error
+            throw new Exception("Unable to connect to SQL Server. Please ensure that SQL Server is installed and running.");
         }
     }
     
@@ -65,7 +60,6 @@ public class DatabaseContext
             using var connection = GetConnection();
             connection.Open();
             
-            // Create Users table
             ExecuteNonQuery(connection, @"
                 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Users')
                 CREATE TABLE Users (
@@ -81,7 +75,6 @@ public class DatabaseContext
                     IsActive BIT DEFAULT 1
                 )");
             
-            // Create Products table
             ExecuteNonQuery(connection, @"
                 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Products')
                 CREATE TABLE Products (
@@ -98,7 +91,6 @@ public class DatabaseContext
                     DiscountPercentage DECIMAL(5,2)
                 )");
             
-            // Create Orders table
             ExecuteNonQuery(connection, @"
                 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Orders')
                 CREATE TABLE Orders (
@@ -116,7 +108,6 @@ public class DatabaseContext
                     FOREIGN KEY (CustomerId) REFERENCES Users(UserId)
                 )");
             
-            // Create OrderItems table
             ExecuteNonQuery(connection, @"
                 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'OrderItems')
                 CREATE TABLE OrderItems (
@@ -132,7 +123,6 @@ public class DatabaseContext
                     FOREIGN KEY (ProductId) REFERENCES Products(ProductId)
                 )");
             
-            // Create Reviews table
             ExecuteNonQuery(connection, @"
                 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Reviews')
                 CREATE TABLE Reviews (
@@ -147,7 +137,6 @@ public class DatabaseContext
                     FOREIGN KEY (CustomerId) REFERENCES Users(UserId)
                 )");
             
-            // Create Discounts table
             ExecuteNonQuery(connection, @"
                 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Discounts')
                 CREATE TABLE Discounts (
@@ -163,7 +152,6 @@ public class DatabaseContext
                     UsageCount INT DEFAULT 0
                 )");
             
-            // Insert default admin if no users exist
             var userCount = ExecuteScalar(connection, "SELECT COUNT(*) FROM Users");
             if (Convert.ToInt32(userCount) == 0)
             {
@@ -177,10 +165,9 @@ public class DatabaseContext
                     new SqlParameter("@FullName", "System Administrator"),
                     new SqlParameter("@PhoneNumber", "0000000000"),
                     new SqlParameter("@Address", "GreenLife HQ"),
-                    new SqlParameter("@Role", SqlDbType.Int) { Value = 0 }); // Admin role
+                    new SqlParameter("@Role", SqlDbType.Int) { Value = 0 });
             }
             
-            // Insert sample products if none exist
             var productCount = ExecuteScalar(connection, "SELECT COUNT(*) FROM Products");
             if (Convert.ToInt32(productCount) == 0)
             {

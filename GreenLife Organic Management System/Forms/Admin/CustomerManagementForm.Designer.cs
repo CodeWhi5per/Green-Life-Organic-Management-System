@@ -32,13 +32,11 @@ partial class CustomerManagementForm
         ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
         this.SuspendLayout();
         
-        // txtSearch
         this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.txtSearch.Location = new System.Drawing.Point(20, 20);
         this.txtSearch.PlaceholderText = "Search by username, name, or email...";
         this.txtSearch.Size = new System.Drawing.Size(350, 25);
         
-        // btnSearch
         this.btnSearch.BackColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.btnSearch.FlatStyle = FlatStyle.Flat;
         this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -48,14 +46,12 @@ partial class CustomerManagementForm
         this.btnSearch.Text = "Search";
         this.btnSearch.Click += new EventHandler(this.btnSearch_Click);
         
-        // lblTotalCustomers
         this.lblTotalCustomers.AutoSize = true;
         this.lblTotalCustomers.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
         this.lblTotalCustomers.ForeColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.lblTotalCustomers.Location = new System.Drawing.Point(500, 25);
         this.lblTotalCustomers.Text = "Total Customers: 0";
         
-        // dgvCustomers
         this.dgvCustomers.AllowUserToAddRows = false;
         this.dgvCustomers.AllowUserToDeleteRows = false;
         this.dgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -66,7 +62,6 @@ partial class CustomerManagementForm
         this.dgvCustomers.Size = new System.Drawing.Size(760, 400);
         this.dgvCustomers.SelectionChanged += new EventHandler(this.dgvCustomers_SelectionChanged);
         
-        // txtCustomerInfo
         this.txtCustomerInfo.BackColor = System.Drawing.Color.White;
         this.txtCustomerInfo.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.txtCustomerInfo.Location = new System.Drawing.Point(800, 60);
@@ -74,7 +69,6 @@ partial class CustomerManagementForm
         this.txtCustomerInfo.ReadOnly = true;
         this.txtCustomerInfo.Size = new System.Drawing.Size(300, 300);
         
-        // btnToggleStatus
         this.btnToggleStatus.BackColor = System.Drawing.Color.FromArgb(255, 193, 7);
         this.btnToggleStatus.FlatStyle = FlatStyle.Flat;
         this.btnToggleStatus.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -83,7 +77,6 @@ partial class CustomerManagementForm
         this.btnToggleStatus.Text = "Activate/Deactivate";
         this.btnToggleStatus.Click += new EventHandler(this.btnToggleStatus_Click);
         
-        // btnClose
         this.btnClose.BackColor = System.Drawing.Color.Gray;
         this.btnClose.FlatStyle = FlatStyle.Flat;
         this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -93,7 +86,6 @@ partial class CustomerManagementForm
         this.btnClose.Text = "Close";
         this.btnClose.Click += new EventHandler(this.btnClose_Click);
         
-        // CustomerManagementForm
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = System.Drawing.Color.FromArgb(240, 255, 240);

@@ -50,7 +50,6 @@ partial class AdminDashboardForm
         this.panelStats.SuspendLayout();
         this.SuspendLayout();
         
-        // lblTitle
         this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
         this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.lblTitle.Location = new System.Drawing.Point(20, 20);
@@ -58,14 +57,12 @@ partial class AdminDashboardForm
         this.lblTitle.Size = new System.Drawing.Size(400, 45);
         this.lblTitle.Text = "Admin Dashboard";
         
-        // lblWelcome
         this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 12F);
         this.lblWelcome.Location = new System.Drawing.Point(20, 70);
         this.lblWelcome.Name = "lblWelcome";
         this.lblWelcome.Size = new System.Drawing.Size(400, 25);
         this.lblWelcome.Text = "Welcome, Admin!";
         
-        // panelStats
         this.panelStats.BackColor = System.Drawing.Color.White;
         this.panelStats.BorderStyle = BorderStyle.FixedSingle;
         this.panelStats.Controls.Add(this.lblTotalProductsLabel);
@@ -80,7 +77,6 @@ partial class AdminDashboardForm
         this.panelStats.Name = "panelStats";
         this.panelStats.Size = new System.Drawing.Size(760, 120);
         
-        // Statistics Labels
         this.lblTotalProductsLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.lblTotalProductsLabel.Location = new System.Drawing.Point(20, 20);
         this.lblTotalProductsLabel.Size = new System.Drawing.Size(150, 25);
@@ -125,7 +121,6 @@ partial class AdminDashboardForm
         this.lblTotalSales.Size = new System.Drawing.Size(150, 40);
         this.lblTotalSales.Text = "$0.00";
         
-        // Buttons
         var buttonY = 270;
         this.btnProducts.BackColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.btnProducts.FlatStyle = FlatStyle.Flat;
@@ -177,7 +172,6 @@ partial class AdminDashboardForm
         this.btnLogout.Text = "Logout";
         this.btnLogout.Click += new EventHandler(this.btnLogout_Click);
         
-        // AdminDashboardForm
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = System.Drawing.Color.FromArgb(240, 255, 240);

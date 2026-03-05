@@ -69,7 +69,6 @@ partial class ProductManagementForm
         this.grpProductDetails.SuspendLayout();
         this.SuspendLayout();
         
-        // dgvProducts
         this.dgvProducts.AllowUserToAddRows = false;
         this.dgvProducts.AllowUserToDeleteRows = false;
         this.dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -80,7 +79,6 @@ partial class ProductManagementForm
         this.dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         this.dgvProducts.Size = new System.Drawing.Size(750, 300);
         
-        // Search controls
         this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
         this.txtSearch.Location = new System.Drawing.Point(20, 30);
         this.txtSearch.Name = "txtSearch";
@@ -102,7 +100,6 @@ partial class ProductManagementForm
         this.btnSearch.Text = "Search";
         this.btnSearch.Click += new EventHandler(this.btnSearch_Click);
         
-        // grpProductDetails
         this.grpProductDetails.Controls.Add(this.lblName);
         this.grpProductDetails.Controls.Add(this.txtName);
         this.grpProductDetails.Controls.Add(this.lblCategory);
@@ -124,7 +121,6 @@ partial class ProductManagementForm
         this.grpProductDetails.Size = new System.Drawing.Size(310, 460);
         this.grpProductDetails.Text = "Product Details";
         
-        // Product detail controls
         int yPos = 35;
         int spacing = 60;
         
@@ -210,7 +206,6 @@ partial class ProductManagementForm
         this.chkActive.Location = new System.Drawing.Point(165, yPos + 20);
         this.chkActive.Text = "Active";
         
-        // Action buttons
         this.btnAdd.BackColor = System.Drawing.Color.FromArgb(34, 139, 34);
         this.btnAdd.FlatStyle = FlatStyle.Flat;
         this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -256,7 +251,6 @@ partial class ProductManagementForm
         this.btnClose.Text = "Close";
         this.btnClose.Click += new EventHandler(this.btnClose_Click);
         
-        // ProductManagementForm
         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         this.AutoScaleMode = AutoScaleMode.Font;
         this.BackColor = System.Drawing.Color.FromArgb(240, 255, 240);

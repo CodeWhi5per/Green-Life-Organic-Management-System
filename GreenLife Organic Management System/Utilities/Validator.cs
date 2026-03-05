@@ -25,7 +25,6 @@ public static class Validator
         if (string.IsNullOrWhiteSpace(phoneNumber))
             return false;
         
-        // Allow digits, spaces, hyphens, and parentheses
         var regex = new Regex(@"^[\d\s\-\(\)]{10,15}$");
         return regex.IsMatch(phoneNumber);
     }
@@ -42,7 +41,6 @@ public static class Validator
     
     public static bool IsValidPassword(string password)
     {
-        // At least 6 characters
         return !string.IsNullOrWhiteSpace(password) && password.Length >= 6;
     }
     

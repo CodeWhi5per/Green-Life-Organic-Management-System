@@ -12,7 +12,6 @@ public static class ExportHelper
         using var package = new ExcelPackage();
         var worksheet = package.Workbook.Worksheets.Add("Orders");
         
-        // Headers
         worksheet.Cells[1, 1].Value = "Order ID";
         worksheet.Cells[1, 2].Value = "Customer";
         worksheet.Cells[1, 3].Value = "Order Date";
@@ -20,7 +19,6 @@ public static class ExportHelper
         worksheet.Cells[1, 5].Value = "Total Amount";
         worksheet.Cells[1, 6].Value = "Final Amount";
         
-        // Style headers
         using (var range = worksheet.Cells[1, 1, 1, 6])
         {
             range.Style.Font.Bold = true;
@@ -28,7 +26,6 @@ public static class ExportHelper
             range.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
         }
         
-        // Data
         for (int i = 0; i < orders.Count; i++)
         {
             var order = orders[i];
@@ -53,7 +50,6 @@ public static class ExportHelper
         using var package = new ExcelPackage();
         var worksheet = package.Workbook.Worksheets.Add("Products");
         
-        // Headers
         worksheet.Cells[1, 1].Value = "Product ID";
         worksheet.Cells[1, 2].Value = "Name";
         worksheet.Cells[1, 3].Value = "Category";
@@ -61,7 +57,6 @@ public static class ExportHelper
         worksheet.Cells[1, 5].Value = "Stock";
         worksheet.Cells[1, 6].Value = "Supplier";
         
-        // Style headers
         using (var range = worksheet.Cells[1, 1, 1, 6])
         {
             range.Style.Font.Bold = true;
@@ -69,7 +64,6 @@ public static class ExportHelper
             range.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
         }
         
-        // Data
         for (int i = 0; i < products.Count; i++)
         {
             var product = products[i];

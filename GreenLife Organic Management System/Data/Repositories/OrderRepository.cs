@@ -13,7 +13,7 @@ public class OrderRepository
         
         try
         {
-            // Insert order
+
             var orderQuery = @"INSERT INTO Orders (CustomerId, OrderDate, Status, TotalAmount, DiscountAmount, FinalAmount, ShippingAddress, Notes)
                               VALUES (@CustomerId, @OrderDate, @Status, @TotalAmount, @DiscountAmount, @FinalAmount, @ShippingAddress, @Notes);
                               SELECT CAST(SCOPE_IDENTITY() as int)";
@@ -33,7 +33,6 @@ public class OrderRepository
                 orderId = (int)command.ExecuteScalar()!;
             }
             
-            // Insert order items
             var itemQuery = @"INSERT INTO OrderItems (OrderId, ProductId, ProductName, Quantity, UnitPrice, Subtotal, DiscountApplied)
                              VALUES (@OrderId, @ProductId, @ProductName, @Quantity, @UnitPrice, @Subtotal, @DiscountApplied)";
             
@@ -49,7 +48,6 @@ public class OrderRepository
                 command.Parameters.AddWithValue("@DiscountApplied", item.DiscountApplied ?? (object)DBNull.Value);
                 command.ExecuteNonQuery();
                 
-                // Update product stock
                 var stockQuery = "UPDATE Products SET StockQuantity = StockQuantity - @Quantity WHERE ProductId = @ProductId";
                 using var stockCommand = new SqlCommand(stockQuery, connection, transaction);
                 stockCommand.Parameters.AddWithValue("@Quantity", item.Quantity);
@@ -132,7 +130,6 @@ public class OrderRepository
             var order = MapOrder(reader);
             reader.Close();
             
-            // Load order items
             order.OrderItems = GetOrderItems(orderId, connection);
             return order;
         }

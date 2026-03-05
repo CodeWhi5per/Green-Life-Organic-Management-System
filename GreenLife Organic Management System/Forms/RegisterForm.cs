@@ -17,7 +17,6 @@ public partial class RegisterForm : Form
     {
         try
         {
-            // Validate inputs
             if (!ValidateInputs())
             {
                 return;
